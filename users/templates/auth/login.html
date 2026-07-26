@@ -1,0 +1,16 @@
+{% extends "editor/base.html" %}
+{% block content %}
+<h1>Login</h1>
+<form>
+    {% csrf_token %}
+    {{login_form.as_p}}
+    <button type="submit" name="login_form">Button</button>
+</form>
+<h1>Register</h1>
+<form method="post">
+    {% csrf_token %}
+    {{register_form.as_p}}
+    <button type="submit" name="register_form">Register</button>
+</form>
+
+{% endblock %}
