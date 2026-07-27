@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block nav_extra %}
-Save Export
 {% endblock %}
 {% block content %}
+<form method="post">
+{% csrf_token %}
 <div class="flex h-screen">
     <div class="w-1/2 border-r border-slate-600 flex flex-col">
         <h2 class="text-center font-bold py-2 border-b border-slate-600">Markdown</h2>
         <textarea class="flex-1 bg-transparent p-4 resize-none outline-none font-mono"
-                  name="content">{{ document.content }}</textarea>
+                  name="content">{{ content }}</textarea>
     </div>
     <div class="w-1/2 flex flex-col">
         <h2 class="text-center font-bold py-2 border-b border-slate-600">Preview</h2>
@@ -16,4 +17,6 @@ Save Export
         </div>
     </div>
 </div>
+<button type="submit" class="hover:cursor-pointer">Save</button>
+</form>
 {% endblock %}

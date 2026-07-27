@@ -12,7 +12,7 @@ def parse_markdown(text):
     for line in lines:
         if line.startswith('## '):
             flush_paragraph()
-            html_blocks.append(f"<h2>{line[3:]}</h2>")
+            html_blocks.append(f'<h2>{line[3:]}</h2>')
         elif line.startswith('# '):
             flush_paragraph()
             html_blocks.append(f'<h1>{line[2:]}</h1>')

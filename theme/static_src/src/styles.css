@@ -8,3 +8,13 @@
   * the scope of this path.
   */
 @source "../../../**/*.{html,py,js}";
+
+#preview h1 {
+    @apply text-3xl font-bold mb-4;
+}
+#preview h2 {
+    @apply text-2xl font-bold mb-3;
+}
+#preview p {
+    @apply mb-3;
+}

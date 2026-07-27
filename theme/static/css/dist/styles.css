@@ -21,6 +21,8 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
     --default-font-family: var(--font-sans);
@@ -199,9 +201,6 @@
   }
   .flex {
     display: flex;
-  }
-  .hidden {
-    display: none;
   }
   .h-screen {
     height: 100vh;
@@ -388,6 +387,23 @@
       }
     }
   }
+}
+#preview h1 {
+  margin-bottom: calc(var(--spacing) * 4);
+  font-size: var(--text-3xl);
+  line-height: var(--tw-leading, var(--text-3xl--line-height));
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+}
+#preview h2 {
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+}
+#preview p {
+  margin-bottom: calc(var(--spacing) * 3);
 }
 @property --tw-border-spacing-x {
   syntax: "<length>";
