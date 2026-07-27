@@ -3,18 +3,17 @@
 Save Export
 {% endblock %}
 {% block content %}
-<table class="w-full table-fixed border-collapse border-spacing-0 overflow-hidden border border-slate-600">
-    <tr>
-        <th>Markdown</th>
-        <th>Preview</th>
-    </tr>
-    <tr>
-        <td>
-            <textarea name="name" rows="8" cols="80"></textarea>
-        </td>
-        <td>
-        <textarea name="name" rows="8" cols="80"></textarea>
-        </td>
-    </tr>
-</table>
+<div class="flex h-screen">
+    <div class="w-1/2 border-r border-slate-600 flex flex-col">
+        <h2 class="text-center font-bold py-2 border-b border-slate-600">Markdown</h2>
+        <textarea class="flex-1 bg-transparent p-4 resize-none outline-none font-mono"
+                  name="content">{{ document.content }}</textarea>
+    </div>
+    <div class="w-1/2 flex flex-col">
+        <h2 class="text-center font-bold py-2 border-b border-slate-600">Preview</h2>
+        <div class="flex-1 p-4 overflow-y-auto" id="preview">
+            {{ rendered_html|safe }}
+        </div>
+    </div>
+</div>
 {% endblock %}

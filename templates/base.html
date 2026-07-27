@@ -10,7 +10,14 @@
 
 <body class="bg-slate-800 text-white">
     <nav class="flex justify-between items-center py-6 px-4 border-b shadow-lg font-mono">
+        <div class="flex flex-row gap-4 items-center">
         <a href="/" class="font-bold text-xl">Drafter</a>
+        {% if document %}
+        <div class="text-sm">
+            {{document.title}}
+        </div>
+        {% endif %}
+        </div>
         <div class="">
             {% if user.is_authenticated %}
                 <form action="{% url 'logout' %}" method="post" style="display:inline;">
@@ -22,7 +29,7 @@
             {% block nav_extra %}{% endblock %}
         </div>
     </nav>
-    <main class="w-full py-6 px-4">
+    <main class="w-full">
     {% block content %}{% endblock %}
     </main>
 </body>
