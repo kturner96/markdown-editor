@@ -46,6 +46,8 @@ INSTALLED_APPS = [
 
 TAILWIND_APP_NAME = 'theme'
 LOGIN_URL = 'login'
+AUTH_USER_MODEL = 'users.CustomUser'
+AUTHENTICATION_BACKENDS = ['users.backends.EmailBackend']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

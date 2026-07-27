@@ -1,4 +1,3 @@
-
 from django.contrib.auth import login
 from django.shortcuts import redirect, render
 
@@ -21,13 +20,15 @@ def auth_view(request):
             if login_form.is_valid():
                 user = login_form.get_user()
                 login(request, user)
-                return redirect('editor_new')
+                return redirect('profile')
         elif 'register_form' in request.POST:
                 register_form = StyledUserCreationForm(request.POST)
                 if register_form.is_valid():
                     user = register_form.save()
                     login(request, user)
-                    return redirect('editor_new')
+                    return redirect('profile')
+                else:
+                    return redirect('login')
 
     return render(request, 'users/login.html', {
         'login_form': login_form,
