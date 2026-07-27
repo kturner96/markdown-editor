@@ -1,7 +1,7 @@
-{% extends "editor/base.html" %}
+{% extends "base.html" %}
 {% block content %}
 <h1>Login</h1>
-<form>
+<form method="post">
     {% csrf_token %}
     {{login_form.as_p}}
     <button type="submit" name="login_form">Button</button>

@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'editor',
     'tailwind',
     'theme',
-    'users'
+    'users',
+    'pages'
 ]
 
 TAILWIND_APP_NAME = 'theme'
+LOGIN_URL = 'login'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'markdowneditor.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,5 +1,20 @@
-{% extends "editor/base.html" %}
+{% extends "base.html" %}
+{% block nav_extra %}
+Save Export
+{% endblock %}
 {% block content %}
-<h1>Test</h1>
-{{user.username}}
+<table class="w-full table-fixed border-collapse border-spacing-0 overflow-hidden border border-slate-600">
+    <tr>
+        <th>Markdown</th>
+        <th>Preview</th>
+    </tr>
+    <tr>
+        <td>
+            <textarea name="name" rows="8" cols="80"></textarea>
+        </td>
+        <td>
+        <textarea name="name" rows="8" cols="80"></textarea>
+        </td>
+    </tr>
+</table>
 {% endblock %}
